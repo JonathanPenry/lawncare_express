@@ -63,7 +63,7 @@ async function all(res) {
     try {
         // Try to get all data from table customer_info on lanwcare_app database
         // Can get sample of SQL from MAMP server by clicking SQL
-        // const [customers] is necessary because it's what we're actaully getting back in the return (data: todos)
+        // const [customers] is necessary because it's what we're actaully getting back in the return (data: customers)
         const [customers] = await pool.query("SELECT * FROM customer_info");
         // If successsful, send success message
         return res.send({ success: true, data: customers, error: null });
