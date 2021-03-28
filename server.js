@@ -8,13 +8,13 @@ const express = require("express");                         // Use express modul
 const bodyParser = require("body-parser");                  // Allows for the body of the req/res to be read
 const app = express();                                      // Creates an object of the express module                                
 const PORT = process.env.PORT || 3000;                      // Defines localhost port as 3000 or port in .env (8080)
-// const quotesRoutes = require("/api/routes/quotes.routes");   // Connects quotes routes
-// const adminRoutes = require("/api/routes/admin.routes");     // Connects admin routes
+// const quotesRoutes = require("/Routes/quotes.routes");   // Connects quotes routes
+// const adminRoutes = require("/Routes/admin.routes");     // Connects admin routes
 
 /////////////
 // APP.USE //
 /////////////
-// app.use mostly sets up middleware (bodyparcer is middleware)
+// app.use mostly sets up middleware (bodyparcer is technically middleware)
 // app.use(express.static(__dirname + "/build"));           // Build (deployment) needs to be at the top before app.use
 // app.use(session({ secret: process.env.SECRET_KEY }));    // For connection to the database
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 /////////////////
-// HELLO WORLD //
+// HELLO WORLD //   // Just to make sure something displays
 /////////////////
 app.get('/',function(req,res)
 {
@@ -31,7 +31,7 @@ res.send('Hello World!?');
 
 
 ///////////////
-// APP.GET() //
+// APP.GET() //     // No middleware so I don't think I need this...
 ///////////////
     // APP.GET() function - routes the HTTP GET Requests to the path which is being specified with the specified callback functions. 
     // Syntax: app.get( path, callback )

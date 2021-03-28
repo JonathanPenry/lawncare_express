@@ -17,6 +17,7 @@ const customers = require("../Models/admin.model");
 /////////////////
 router.post("/login", (req, res) => {
     loginFunctions.login(res, req.body.username, req.body.password);
+    console.log("Admin Routes Post Login")
 });
 
 
@@ -24,6 +25,7 @@ router.post("/login", (req, res) => {
 // ADMIN GET CUSTOMER DATABASE LIST //
 //////////////////////////////////////
 router.get("/all", (req, res) => {
+    console.log("Admin Routes Get All")
     return customers.all(res);
 })
 
